@@ -1,0 +1,22 @@
+<%= debug @restaurant %>
+<%= debug @review %>
+
+
+<h1>Add a Review</h1>
+
+<section class='add-restaurant'>
+<div class="restaurant-form">
+  <%= form_for([@restaurant, @review]) do |r| %>
+		<%= r.label :review %>
+		<%= r.text_field :review %>
+
+		<%= r.label :visit_date%>
+		<%= r.text_field :visit_date %>
+
+	<%= r.submit "Add a review", class: "btn btn-large btn-primary" %> 
+
+	<% end %>
+
+	<h4><a href= "/restaurants/" class= "btn btn-primary" >Actually I want to eat not review a restaurant</a></h4>
+
+</div>

@@ -1,0 +1,30 @@
+<h1>Still Hungry?</h1>
+<p>What did you think of your food</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Review</th>
+			<th>Visit Date</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% unless @reviews.empty? %>
+		<% @reviews.each do |review| %>
+		<tr>
+			<td><%= review.review %></td>
+			<td><%= review.visit_date %></td>
+		</tr>
+			<% end %>
+			<% else %>
+			<td>"No Reviews yet"</td>
+		<% end %>
+		</tbody>
+		<%= %>
+
+		<td><h4><a href= "/reviews/new/" class= "btn btn-primary" >Add a review</a></h4><td>
+
+	</tbody>
+</table>

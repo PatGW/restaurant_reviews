@@ -1,7 +1,12 @@
 RestaurantReviews::Application.routes.draw do
-  get "restaurants/index"
+  # get "restaurants/index"
 
-  get "restaurants/new"
+  # get "restaurants/new"
+
+  resources :restaurants do
+    resources :reviews
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

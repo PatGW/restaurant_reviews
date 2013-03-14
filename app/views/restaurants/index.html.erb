@@ -1,2 +1,32 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h1>Hungry?</h1>
+<p>Find somewhere to eat below</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Phone Number</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% unless @restaurants.empty? %>
+		<% @restaurants.each do |restaurant| %>
+		<tr>
+			<td><%= link_to(restaurant.name, restaurant_path(restaurant)) %></td>
+			<td><%= restaurant.address %></td>
+			<td><%= restaurant.phone_number %></td>
+		</tr>
+			<% end %>
+			<% else %>
+			<td>"No Restaurants yet"</td>
+		<% end %>
+		</tbody>
+		<%= %>
+
+		<td><h4><a href= "/restaurants/new/" class= "btn btn-primary" >Add a restaurant</a></h4><td>
+		<td><h4><a href="/reviews/" class="btn btn-primary">Actually I want to review a restaurant</a></h4><td>
+
+	</tbody>
+</table>

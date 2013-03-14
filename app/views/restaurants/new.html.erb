@@ -1,2 +1,27 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+
+
+<h1>Add a Restaurant</h1>
+
+<section class='add-restaurant'>
+<div class="restaurant-form">
+  <%= form_for(@restaurant) do |r| %>
+		<%= r.label :name %>
+		<%= r.text_field :name %>
+
+		<%= r.label :address %>
+		<%= r.text_field :address %>
+
+		<%= r.label :phone_number %>
+		<%= r.text_field :phone_number %>
+
+	<%= r.submit "Add new Restaurant", class: "btn btn-large btn-primary" %> 
+
+	<% end %>
+
+	<h4><a href="/restaurants/" class="btn btn-primary">Actually I want to eat not add a restaurant</a></h4>
+
+
+</div>
+</section>
+
+
