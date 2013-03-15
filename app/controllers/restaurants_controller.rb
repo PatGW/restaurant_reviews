@@ -38,6 +38,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find_by_id(params[:id])
+    @reviews = Review.where("restaurant_id = ?", params[:id])
     if @restaurant.nil?
       @restaurant = Restaurant.all
       render :index

@@ -9,6 +9,15 @@
 	<%= @restaurant.phone_number %>
 </p>
 
+	<tbody>
+		<% @reviews.each do |review| %>
+		<tr>
+			<td><%= review.review %></td>
+			<td><%= review.visit_date %></td>
+		</tr>
+		<% end %>
+	</tbody>
+
 <%= link_to("Add Review", new_restaurant_review_path(@restaurant)) %>
 
 <td><h4><a href= "/restaurants/" class= "btn btn-primary" >Back to all restaurants</a></h4><td>
